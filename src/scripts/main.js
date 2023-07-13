@@ -1,7 +1,7 @@
 const routes = {
-  '/': 'main.html',
-  '/card': 'card.html',
-  '/bascet': 'bascet.html',
+  '/': './pages/main.html',
+  '/card': './pages/card.html',
+  '/bascet': './pages/bascet.html',
 };
 
 document.addEventListener('click', (event) => {
@@ -18,7 +18,7 @@ function router(event) {
 
 async function switchPage() {
   const path = window.location.pathname;
-  const url = routes[path];
+  const url = routes[path] ? routes[path] : Object.values(routes)[0];
 
   console.log('Path: ', path, '  URL: ', url);
 
@@ -30,8 +30,5 @@ async function switchPage() {
     });
 }
 
-window.addEventListener('beforeunload', function (event) {
-  event.preventDefault();
-});
-
-switchPage();
+window.addEventListener('popstate', switchPage);
+document.addEventListener('DOMContentLoaded', switchPage);
