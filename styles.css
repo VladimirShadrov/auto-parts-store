@@ -1,0 +1,19 @@
+h1 {
+  text-align: center;
+  color: purple;
+}
+
+.menu {
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+.link {
+  text-decoration: none;
+  color: black;
+  margin: 0 15px;
+}
+.content {
+  margin-top: 50px;
+}
