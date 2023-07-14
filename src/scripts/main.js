@@ -20,8 +20,6 @@ async function switchPage() {
   const path = window.location.pathname;
   const url = routes[path] ? routes[path] : Object.values(routes)[0];
 
-  console.log('Path: ', path, '  URL: ', url);
-
   await fetch(url)
     .then((data) => data.text())
     .then((html) => (document.querySelector('.content').innerHTML = html))
@@ -32,3 +30,5 @@ async function switchPage() {
 
 window.addEventListener('popstate', switchPage);
 document.addEventListener('DOMContentLoaded', switchPage);
+
+//---------------------------------

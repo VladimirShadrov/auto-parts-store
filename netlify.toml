@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build" # команда, которая собирает клиентскую часть проекта
+  publish = "src/build" # путь к папке с собранными файлами клиента
+
+[[redirects]] # настройки проксирования запросов на сервер
+  from = "/api/*"
+  to = "http://localhost:3000/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/server/*"
+  to = "http://localhost:3000/:splat"
+  status = 200
