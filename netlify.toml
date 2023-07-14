@@ -3,10 +3,10 @@
 
 [[redirects]] # настройки проксирования запросов на сервер
   from = "/api/*"
-  to = "http://localhost:3000/:splat"
+  to = "http://localhost:5500/:splat"
   status = 200
 
 [[redirects]]
   from = "/server/*"
-  to = "http://localhost:3000/:splat"
+  to = "http://localhost:5500/:splat"
   status = 200
